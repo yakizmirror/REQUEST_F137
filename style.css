@@ -1,12 +1,7 @@
 /* =========================================================
    ASCB FORM 137 REQUEST SYSTEM
    FORMAL REGISTRAR DESIGN
-   SHORT BOND / LETTER
-   8.5 x 11 INCHES
-========================================================= */
-
-/* =========================================================
-   ROOT
+   SHORT BOND / LETTER 8.5 x 11 INCHES
 ========================================================= */
 
 :root {
@@ -35,2879 +30,824 @@
 
     --sidebar-width: 400px;
 
-    /* REAL LETTER PAPER */
     --paper-width: 8.5in;
     --paper-height: 11in;
 
-    /* DOCUMENT MARGINS */
     --paper-left: 0.65in;
     --paper-right: 0.65in;
     --paper-top: 0.45in;
     --paper-bottom: 0.55in;
 }
 
+/* ========================================================= RESET ========================================================= */
 
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     min-height: 100vh;
-
-    font-family:
-        "Poppins",
-        Arial,
-        sans-serif;
-
+    font-family: "Poppins", Arial, sans-serif;
     color: var(--black);
-
-    background:
-        linear-gradient(
-            135deg,
-            #eef3f8 0%,
-            #f7f9fc 50%,
-            #e9eff5 100%
-        );
-
+    background: linear-gradient(135deg, #eef3f8 0%, #f7f9fc 50%, #e9eff5 100%);
     overflow-x: hidden;
 }
 
-button,
-input,
-select,
-textarea {
-    font-family: inherit;
-}
+button, input, select, textarea { font-family: inherit; }
+button { cursor: pointer; }
+img { max-width: 100%; display: block; }
 
-button {
-    cursor: pointer;
-}
+/* ========================================================= APP ========================================================= */
 
-img {
-    max-width: 100%;
-    display: block;
-}
+.app { width: 100%; min-height: 100vh; display: flex; }
 
-
-/* =========================================================
-   APPLICATION
-========================================================= */
-
-.app {
-    width: 100%;
-    min-height: 100vh;
-
-    display: flex;
-}
-
-
-/* =========================================================
-   SIDEBAR
-========================================================= */
+/* ========================================================= SIDEBAR ========================================================= */
 
 .sidebar {
     width: var(--sidebar-width);
     min-width: var(--sidebar-width);
-
     height: 100vh;
-
     display: flex;
     flex-direction: column;
-
     color: var(--white);
-
-    background:
-        linear-gradient(
-            160deg,
-            #071b2d 0%,
-            #102a43 48%,
-            #173c5c 100%
-        );
-
+    background: linear-gradient(160deg, #071b2d 0%, #102a43 48%, #173c5c 100%);
     border-right: 1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-        10px 0 35px rgba(7,27,45,.12);
-
+    box-shadow: 10px 0 35px rgba(7,27,45,.12);
     position: relative;
     z-index: 20;
 }
 
 .sidebar::before {
     content: "";
-
     position: absolute;
-
-    width: 250px;
-    height: 250px;
-
-    top: -100px;
-    right: -120px;
-
+    width: 250px; height: 250px;
+    top: -100px; right: -120px;
     border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(201,162,39,.15),
-            transparent 68%
-        );
-
+    background: radial-gradient(circle, rgba(201,162,39,.15), transparent 68%);
     pointer-events: none;
 }
 
 .sidebar::after {
     content: "";
-
     position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    bottom: 5%;
-    left: -100px;
-
+    width: 180px; height: 180px;
+    bottom: 5%; left: -100px;
     border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.04),
-            transparent 70%
-        );
-
+    background: radial-gradient(circle, rgba(255,255,255,.04), transparent 70%);
     pointer-events: none;
 }
 
+/* ========================================================= BRAND ========================================================= */
 
-/* =========================================================
-   BRAND
-========================================================= */
-
-.brand {
-    padding: 24px 24px 18px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 14px;
-
-    position: relative;
-    z-index: 2;
-}
+.brand { padding: 24px 24px 18px; display: flex; align-items: center; gap: 14px; position: relative; z-index: 2; }
 
 .brand-logo {
-    width: 54px;
-    height: 54px;
-
+    width: 54px; height: 54px;
     flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    display: flex; align-items: center; justify-content: center;
     color: var(--gold);
-
-    border:
-        1px solid rgba(201,162,39,.6);
-
+    border: 1px solid rgba(201,162,39,.6);
     border-radius: 13px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.10),
-            rgba(255,255,255,.03)
-        );
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.08),
-        0 8px 20px rgba(0,0,0,.15);
-
+    background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 8px 20px rgba(0,0,0,.15);
     font-size: 23px;
 }
 
-.brand-content h1 {
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        serif;
+.brand-content h1 { font-family: "Libre Baskerville", Georgia, serif; font-size: 22px; letter-spacing: 1px; }
+.brand-content span { display: block; margin-top: 5px; color: rgba(255,255,255,.65); font-size: 8.5px; font-weight: 600; letter-spacing: 1.1px; }
 
-    font-size: 22px;
+.sidebar-divider { height: 1px; margin: 0 24px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent); }
 
-    letter-spacing: 1px;
-}
+/* ========================================================= SYSTEM HEADING ========================================================= */
 
-.brand-content span {
-    display: block;
+.system-heading { padding: 22px 24px 14px; position: relative; z-index: 2; }
+.system-label { display: inline-block; margin-bottom: 7px; color: var(--gold-light); font-size: 8px; font-weight: 700; letter-spacing: 1.5px; }
+.system-heading h2 { font-family: "Libre Baskerville", Georgia, serif; font-size: 23px; line-height: 1.25; color: #fff; }
+.system-heading p { margin-top: 5px; color: rgba(255,255,255,.55); font-size: 11px; }
 
-    margin-top: 5px;
+/* ========================================================= FORM CONTAINER ========================================================= */
 
-    color: rgba(255,255,255,.65);
+.form-container { flex: 1; min-height: 0; overflow-y: auto; padding: 0 24px 20px; position: relative; z-index: 2; }
+.form-container::-webkit-scrollbar { width: 5px; }
+.form-container::-webkit-scrollbar-track { background: transparent; }
+.form-container::-webkit-scrollbar-thumb { background: rgba(255,255,255,.18); border-radius: 10px; }
 
-    font-size: 8.5px;
-    font-weight: 600;
+/* ========================================================= FORM SECTION ========================================================= */
 
-    letter-spacing: 1.1px;
-}
+.form-section { padding: 17px 0 20px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.form-section:last-child { border-bottom: none; }
 
-.sidebar-divider {
-    height: 1px;
+/* ========================================================= SECTION HEADING ========================================================= */
 
-    margin: 0 24px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.15),
-            transparent
-        );
-}
-
-
-/* =========================================================
-   SYSTEM HEADING
-========================================================= */
-
-.system-heading {
-    padding: 22px 24px 14px;
-
-    position: relative;
-    z-index: 2;
-}
-
-.system-label {
-    display: inline-block;
-
-    margin-bottom: 7px;
-
-    color: var(--gold-light);
-
-    font-size: 8px;
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-}
-
-.system-heading h2 {
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        serif;
-
-    font-size: 23px;
-    line-height: 1.25;
-
-    color: #fff;
-}
-
-.system-heading p {
-    margin-top: 5px;
-
-    color: rgba(255,255,255,.55);
-
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   FORM CONTAINER
-========================================================= */
-
-.form-container {
-    flex: 1;
-
-    min-height: 0;
-
-    overflow-y: auto;
-
-    padding: 0 24px 20px;
-
-    position: relative;
-    z-index: 2;
-}
-
-.form-container::-webkit-scrollbar {
-    width: 5px;
-}
-
-.form-container::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.form-container::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,.18);
-
-    border-radius: 10px;
-}
-
-
-/* =========================================================
-   FORM SECTION
-========================================================= */
-
-.form-section {
-    padding: 17px 0 20px;
-
-    border-bottom:
-        1px solid rgba(255,255,255,.08);
-}
-
-.form-section:last-child {
-    border-bottom: none;
-}
-
-
-/* =========================================================
-   SECTION HEADING
-========================================================= */
-
-.section-heading {
-    display: flex;
-    align-items: center;
-
-    gap: 11px;
-
-    margin-bottom: 17px;
-}
+.section-heading { display: flex; align-items: center; gap: 11px; margin-bottom: 17px; }
 
 .section-icon {
-    width: 35px;
-    height: 35px;
-
+    width: 35px; height: 35px;
     flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    display: flex; align-items: center; justify-content: center;
     color: var(--gold-light);
-
-    background:
-        rgba(201,162,39,.12);
-
-    border:
-        1px solid rgba(201,162,39,.22);
-
+    background: rgba(201,162,39,.12);
+    border: 1px solid rgba(201,162,39,.22);
     border-radius: 9px;
-
     font-size: 13px;
 }
 
-.section-heading h3 {
-    font-size: 12px;
-    font-weight: 600;
+.section-heading h3 { font-size: 12px; font-weight: 600; color: #fff; }
+.section-heading p { margin-top: 2px; color: rgba(255,255,255,.45); font-size: 9px; }
 
-    color: #fff;
-}
+/* ========================================================= FORM GROUP ========================================================= */
 
-.section-heading p {
-    margin-top: 2px;
+.form-group { margin-bottom: 13px; }
+.form-group:last-child { margin-bottom: 0; }
+.form-group > label { display: block; margin-bottom: 6px; color: rgba(255,255,255,.76); font-size: 9px; font-weight: 500; }
 
-    color: rgba(255,255,255,.45);
+.field-hint { margin-top: 6px; color: rgba(255,255,255,.35); font-size: 8px; }
 
-    font-size: 9px;
-}
+/* ========================================================= INPUT ========================================================= */
 
+.input-wrapper, .textarea-wrapper { position: relative; }
 
-/* =========================================================
-   FORM GROUP
-========================================================= */
-
-.form-group {
-    margin-bottom: 13px;
-}
-
-.form-group:last-child {
-    margin-bottom: 0;
-}
-
-.form-group > label {
-    display: block;
-
-    margin-bottom: 6px;
-
-    color: rgba(255,255,255,.76);
-
-    font-size: 9px;
-    font-weight: 500;
-}
-
-
-/* =========================================================
-   INPUT
-========================================================= */
-
-.input-wrapper,
-.textarea-wrapper {
-    position: relative;
-}
-
-.input-wrapper > i,
-.textarea-wrapper > i {
-    position: absolute;
-
-    left: 13px;
-    top: 50%;
-
+.input-wrapper > i, .textarea-wrapper > i {
+    position: absolute; left: 13px; top: 50%;
     transform: translateY(-50%);
-
-    color: var(--gray-400);
-
-    font-size: 11px;
-
-    pointer-events: none;
-
-    z-index: 2;
+    color: var(--gray-400); font-size: 11px;
+    pointer-events: none; z-index: 2;
 }
 
-.textarea-wrapper > i {
-    top: 16px;
-    transform: none;
-}
+.textarea-wrapper > i { top: 16px; transform: none; }
 
-.input-wrapper input,
-.input-wrapper select,
-.textarea-wrapper textarea {
-    width: 100%;
-
-    outline: none;
-
-    color: #fff;
-
-    background:
-        rgba(255,255,255,.065);
-
-    border:
-        1px solid rgba(255,255,255,.10);
-
+.input-wrapper input, .input-wrapper select, .textarea-wrapper textarea {
+    width: 100%; outline: none; color: #fff;
+    background: rgba(255,255,255,.065);
+    border: 1px solid rgba(255,255,255,.10);
     border-radius: 8px;
-
     transition: .2s ease;
 }
 
-.input-wrapper input,
-.input-wrapper select {
-    height: 40px;
-
-    padding:
-        0 12px 0 36px;
-
-    font-size: 10px;
-}
+.input-wrapper input, .input-wrapper select { height: 40px; padding: 0 12px 0 36px; font-size: 10px; }
 
 .input-wrapper select {
-    appearance: none;
-    -webkit-appearance: none;
-
-    padding-right: 32px;
-
-    cursor: pointer;
-
+    appearance: none; -webkit-appearance: none;
+    padding-right: 32px; cursor: pointer;
     background-image:
-        linear-gradient(
-            45deg,
-            transparent 50%,
-            #94a3b8 50%
-        ),
-        linear-gradient(
-            135deg,
-            #94a3b8 50%,
-            transparent 50%
-        );
-
-    background-position:
-        calc(100% - 15px) 17px,
-        calc(100% - 11px) 17px;
-
-    background-size:
-        4px 4px,
-        4px 4px;
-
+        linear-gradient(45deg, transparent 50%, #94a3b8 50%),
+        linear-gradient(135deg, #94a3b8 50%, transparent 50%);
+    background-position: calc(100% - 15px) 17px, calc(100% - 11px) 17px;
+    background-size: 4px 4px, 4px 4px;
     background-repeat: no-repeat;
 }
 
-.input-wrapper select option {
-    color: #111;
-    background: #fff;
+.input-wrapper select option { color: #111; background: #fff; }
+
+.textarea-wrapper textarea { min-height: 80px; resize: vertical; padding: 12px 12px 12px 36px; font-size: 10px; line-height: 1.5; }
+
+.input-wrapper input::placeholder, .textarea-wrapper textarea::placeholder { color: rgba(255,255,255,.35); }
+
+.input-wrapper input:hover, .input-wrapper select:hover, .textarea-wrapper textarea:hover { background: rgba(255,255,255,.09); }
+
+.input-wrapper input:focus, .input-wrapper select:focus, .textarea-wrapper textarea:focus {
+    border-color: rgba(201,162,39,.65);
+    background: rgba(255,255,255,.10);
+    box-shadow: 0 0 0 3px rgba(201,162,39,.08);
 }
 
-.textarea-wrapper textarea {
-    min-height: 80px;
+.input-wrapper:focus-within > i, .textarea-wrapper:focus-within > i { color: var(--gold-light); }
 
-    resize: vertical;
+/* ========================================================= TWO COLUMNS ========================================================= */
 
-    padding:
-        12px 12px 12px 36px;
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 
-    font-size: 10px;
+/* ========================================================= SELECT + ADD ========================================================= */
 
-    line-height: 1.5;
-}
-
-.input-wrapper input::placeholder,
-.textarea-wrapper textarea::placeholder {
-    color: rgba(255,255,255,.35);
-}
-
-.input-wrapper input:hover,
-.input-wrapper select:hover,
-.textarea-wrapper textarea:hover {
-    background:
-        rgba(255,255,255,.09);
-}
-
-.input-wrapper input:focus,
-.input-wrapper select:focus,
-.textarea-wrapper textarea:focus {
-    border-color:
-        rgba(201,162,39,.65);
-
-    background:
-        rgba(255,255,255,.10);
-
-    box-shadow:
-        0 0 0 3px rgba(201,162,39,.08);
-}
-
-.input-wrapper:focus-within > i,
-.textarea-wrapper:focus-within > i {
-    color: var(--gold-light);
-}
-
-
-/* =========================================================
-   TWO COLUMNS
-========================================================= */
-
-.form-row {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 10px;
-}
-
-
-/* =========================================================
-   SELECT + ADD
-========================================================= */
-
-.select-add-wrapper {
-    display: flex;
-
-    align-items: stretch;
-
-    gap: 7px;
-}
-
-.select-add-wrapper .input-wrapper {
-    flex: 1;
-    min-width: 0;
-}
+.select-add-wrapper { display: flex; align-items: stretch; gap: 7px; }
+.select-add-wrapper .input-wrapper { flex: 1; min-width: 0; }
 
 .add-btn {
-    width: 40px;
-
-    flex-shrink: 0;
-
-    border:
-        1px solid rgba(201,162,39,.30);
-
+    width: 40px; flex-shrink: 0;
+    border: 1px solid rgba(201,162,39,.30);
     border-radius: 8px;
-
     color: var(--gold-light);
-
-    background:
-        rgba(201,162,39,.10);
-
+    background: rgba(201,162,39,.10);
     transition: .2s ease;
 }
 
-.add-btn:hover {
-    color: #fff;
+.add-btn:hover { color: #fff; border-color: var(--gold); background: var(--gold); transform: translateY(-1px); }
 
-    border-color: var(--gold);
+/* ========================================================= ADD STUDENT BUTTON ========================================================= */
 
-    background: var(--gold);
-
-    transform: translateY(-1px);
+.add-student-btn {
+    width: 100%; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px;
+    color: var(--gold-light);
+    background: rgba(201,162,39,.10);
+    border: 1px solid rgba(201,162,39,.30);
+    border-radius: 8px;
+    font-size: 10px; font-weight: 600;
+    transition: .2s ease;
 }
 
+.add-student-btn:hover { color: #fff; background: var(--gold); border-color: var(--gold); transform: translateY(-1px); }
 
-/* =========================================================
-   REQUEST OPTIONS
-========================================================= */
+.students-list { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
 
-.request-options {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 7px;
+.student-chip {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 10px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 7px;
+    color: rgba(255,255,255,.82);
+    font-size: 9px;
+    animation: chipIn .18s ease;
 }
+
+@keyframes chipIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.student-chip-name { font-weight: 600; }
+.student-chip-meta { display: block; margin-top: 2px; color: rgba(255,255,255,.45); font-size: 8px; }
+
+.remove-student-btn {
+    width: 22px; height: 22px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    border: none; border-radius: 6px;
+    color: rgba(255,255,255,.55);
+    background: transparent;
+    transition: .2s ease;
+}
+
+.remove-student-btn:hover { color: #fff; background: rgba(180,35,24,.55); }
+
+/* ========================================================= REQUEST OPTIONS ========================================================= */
+
+.request-options { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
 
 .check-option {
     min-height: 38px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 8px;
-
+    display: flex; align-items: center; gap: 8px;
     padding: 7px 9px;
-
     color: rgba(255,255,255,.72);
-
-    background:
-        rgba(255,255,255,.045);
-
-    border:
-        1px solid rgba(255,255,255,.08);
-
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.08);
     border-radius: 8px;
-
     font-size: 9px;
-
     cursor: pointer;
-
     transition: .2s ease;
+    position: relative;
 }
 
-.check-option:hover {
-    background:
-        rgba(255,255,255,.08);
-
-    border-color:
-        rgba(201,162,39,.25);
-}
-
-.check-option input {
-    position: absolute;
-
-    opacity: 0;
-
-    pointer-events: none;
-}
+.check-option:hover { background: rgba(255,255,255,.08); border-color: rgba(201,162,39,.25); }
+.check-option input { position: absolute; opacity: 0; pointer-events: none; }
 
 .check-box {
-    width: 15px;
-    height: 15px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    width: 15px; height: 15px;
+    display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
-
-    border:
-        1px solid rgba(255,255,255,.25);
-
+    border: 1px solid rgba(255,255,255,.25);
     border-radius: 4px;
-
     color: transparent;
-
     font-size: 8px;
-
     transition: .2s ease;
 }
 
-.check-option input:checked + .check-box {
-    color: #fff;
+.check-option input:checked + .check-box { color: #fff; border-color: var(--gold); background: var(--gold); }
+.check-option:has(input:checked) { border-color: rgba(201,162,39,.35); background: rgba(201,162,39,.08); }
 
-    border-color: var(--gold);
-
-    background: var(--gold);
-}
-
-.check-option:has(input:checked) {
-    border-color:
-        rgba(201,162,39,.35);
-
-    background:
-        rgba(201,162,39,.08);
-}
-
-
-/* =========================================================
-   SIDEBAR BUTTONS
-========================================================= */
+/* ========================================================= SIDEBAR BUTTONS ========================================================= */
 
 .sidebar-actions {
     flex-shrink: 0;
-
-    padding:
-        15px 24px 20px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(7,27,45,0),
-            rgba(7,27,45,.98) 25%
-        );
-
-    position: relative;
-    z-index: 5;
+    padding: 15px 24px 20px;
+    background: linear-gradient(to bottom, rgba(7,27,45,0), rgba(7,27,45,.98) 25%);
+    position: relative; z-index: 5;
 }
 
 .action-btn {
     height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    display: flex; align-items: center; justify-content: center;
     gap: 8px;
-
     border-radius: 8px;
-
-    font-size: 10px;
-    font-weight: 600;
-
+    font-size: 10px; font-weight: 600;
     transition: .2s ease;
+    border: none;
 }
 
 .generate-btn {
-    width: 100%;
-
-    color: #fff;
-
-    border:
-        1px solid var(--gold);
-
-    background:
-        linear-gradient(
-            135deg,
-            #c9a227,
-            #a98212
-        );
-
-    box-shadow:
-        0 8px 20px rgba(201,162,39,.18);
+    width: 100%; color: #fff;
+    border: 1px solid var(--gold);
+    background: linear-gradient(135deg, #c9a227, #a98212);
+    box-shadow: 0 8px 20px rgba(201,162,39,.18);
 }
 
-.generate-btn:hover {
-    transform: translateY(-2px);
+.generate-btn:hover { transform: translateY(-2px); }
+
+.action-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+
+.print-btn, .clear-btn {
+    border: 1px solid rgba(255,255,255,.12);
+    color: rgba(255,255,255,.80);
+    background: rgba(255,255,255,.06);
 }
 
-.action-row {
-    display: grid;
+.print-btn:hover, .clear-btn:hover { color: #fff; background: rgba(255,255,255,.10); }
 
-    grid-template-columns:
-        1fr 1fr;
+/* ========================================================= PREVIEW AREA ========================================================= */
 
-    gap: 8px;
-
-    margin-top: 8px;
-}
-
-.print-btn,
-.clear-btn {
-    border:
-        1px solid rgba(255,255,255,.12);
-
-    color:
-        rgba(255,255,255,.80);
-
-    background:
-        rgba(255,255,255,.06);
-}
-
-.print-btn:hover,
-.clear-btn:hover {
-    color: #fff;
-
-    background:
-        rgba(255,255,255,.10);
-}
-
-
-/* =========================================================
-   PREVIEW AREA
-========================================================= */
-
-.preview-area {
-    flex: 1;
-
-    min-width: 0;
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   PREVIEW HEADER
-========================================================= */
+.preview-area { flex: 1; min-width: 0; min-height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
 
 .preview-header {
-    height: 78px;
-
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 20px;
-
-    padding: 0 35px;
-
-    background:
-        rgba(255,255,255,.90);
-
-    border-bottom:
-        1px solid var(--gray-200);
-
-    backdrop-filter:
-        blur(14px);
+    height: 78px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; padding: 0 35px;
+    background: rgba(255,255,255,.90);
+    border-bottom: 1px solid var(--gray-200);
+    backdrop-filter: blur(14px);
 }
 
-.preview-label {
-    display: block;
-
-    margin-bottom: 3px;
-
-    color: var(--gold-dark);
-
-    font-size: 8px;
-    font-weight: 700;
-
-    letter-spacing: 1.6px;
-}
-
-.preview-header h2 {
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        serif;
-
-    color: var(--navy);
-
-    font-size: 17px;
-}
+.preview-label { display: block; margin-bottom: 3px; color: var(--gold-dark); font-size: 8px; font-weight: 700; letter-spacing: 1.6px; }
+.preview-header h2 { font-family: "Libre Baskerville", Georgia, serif; color: var(--navy); font-size: 17px; }
 
 .paper-info {
-    display: flex;
-    align-items: center;
-
-    gap: 7px;
-
+    display: flex; align-items: center; gap: 7px;
     padding: 8px 12px;
-
     color: var(--gray-600);
-
-    background:
-        var(--gray-50);
-
-    border:
-        1px solid var(--gray-200);
-
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
     border-radius: 7px;
-
-    font-size: 8px;
-    font-weight: 600;
-
+    font-size: 8px; font-weight: 600;
     white-space: nowrap;
 }
 
-.paper-info i {
-    color: var(--gold-dark);
-}
+.paper-info i { color: var(--gold-dark); }
 
-
-/* =========================================================
-   PAPER CONTAINER
-========================================================= */
+/* ========================================================= PAPER CONTAINER ========================================================= */
 
 .paper-container {
-    flex: 1;
-
-    min-width: 0;
-    min-height: 0;
-
+    flex: 1; min-width: 0; min-height: 0;
     overflow: auto;
-
-    display: flex;
-
-    align-items: flex-start;
-    justify-content: center;
-
+    display: flex; align-items: flex-start; justify-content: center;
     padding: 35px;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #f9fbfd 0%,
-            #e9eff5 100%
-        );
+    background: radial-gradient(circle at top, #f9fbfd 0%, #e9eff5 100%);
 }
 
-
-/* =========================================================
-   REAL LETTER PAPER
-========================================================= */
+/* ========================================================= REAL LETTER PAPER ========================================================= */
 
 .letter-paper {
-    position: relative;
-
-    flex: 0 0 auto;
-
-    width: var(--paper-width);
-    height: var(--paper-height);
-
-    min-width: var(--paper-width);
-    min-height: var(--paper-height);
-
+    position: relative; flex: 0 0 auto;
+    width: var(--paper-width); height: var(--paper-height);
+    min-width: var(--paper-width); min-height: var(--paper-height);
     margin: 0;
-
-    padding:
-        var(--paper-top)
-        var(--paper-right)
-        var(--paper-bottom)
-        var(--paper-left);
-
+    padding: var(--paper-top) var(--paper-right) var(--paper-bottom) var(--paper-left);
     box-sizing: border-box;
-
-    background: #fff;
-
-    color: #111;
-
+    background: #fff; color: #111;
     overflow: hidden;
-
-    box-shadow:
-        0 18px 50px rgba(15,23,42,.18);
+    box-shadow: 0 18px 50px rgba(15,23,42,.18);
 }
-
-
-/* =========================================================
-   PAPER BORDER
-========================================================= */
 
 .letter-paper::before {
     content: "";
-
     position: absolute;
-
-    top: .18in;
-    right: .18in;
-    bottom: .18in;
-    left: .18in;
-
-    border:
-        1px solid rgba(16,42,67,.12);
-
-    pointer-events: none;
-
-    z-index: 0;
+    top: .18in; right: .18in; bottom: .18in; left: .18in;
+    border: 1px solid rgba(16,42,67,.12);
+    pointer-events: none; z-index: 0;
 }
 
-.letter-intro {
-    text-indent: 0.5in;
-    text-align: justify;
-    line-height: 1.6;
-    margin-top: 0.20in;
-    margin-bottom: 0.18in;
-}
+.letter-intro { text-indent: 0.5in; text-align: justify; line-height: 1.6; margin-top: 0.10in; margin-bottom: 0.20in; }
 
-/* =========================================================
-   OFFICIAL HEADER
-   FULL 8.5-INCH WIDTH
-========================================================= */
+/* ========================================================= OFFICIAL HEADER ========================================================= */
 
 .official-header {
-    position: relative;
+    position: relative; z-index: 5;
+    width: var(--paper-width); max-width: var(--paper-width);
+    margin: calc(-1 * var(--paper-top)) calc(-1 * var(--paper-left)) .16in;
+    padding: 0; text-align: center; line-height: 0; overflow: hidden;
+}
 
-    z-index: 5;
+.header-image { display: block; width: var(--paper-width); max-width: var(--paper-width); height: auto; margin: 0; padding: 0; object-fit: contain; object-position: center top; }
 
-    width: var(--paper-width);
-
-    max-width: var(--paper-width);
-
-    margin:
-        calc(-1 * var(--paper-top))
-        calc(-1 * var(--paper-left))
-        .16in;
-
-    padding: 0;
-
+/* Fallback header shown if Capture.JPG is missing so the letter still looks complete */
+.header-fallback {
+    display: none;
+    padding: .35in 0 .22in;
     text-align: center;
-
-    line-height: 0;
-
-    overflow: hidden;
+    font-family: "Libre Baskerville", Georgia, serif;
+    border-bottom: 3px double var(--navy);
 }
 
-.header-image {
-    display: block;
+.header-fallback-title { font-size: 15pt; font-weight: 700; letter-spacing: .5px; color: var(--navy); }
+.header-fallback-sub { margin-top: 4px; font-size: 9pt; color: var(--gray-600); }
 
-    width: var(--paper-width);
+.official-header.no-image .header-fallback { display: block; }
+.official-header.no-image .header-image { display: none; }
 
-    max-width: var(--paper-width);
+/* ========================================================= LETTER DATE ========================================================= */
 
-    height: auto;
+.letter-date { margin-top: .04in; margin-bottom: .18in; text-align: right; font-family: "Libre Baskerville", Georgia, serif; font-size: 9.5pt; line-height: 1.4; }
 
-    margin: 0;
+/* ========================================================= RECIPIENT ========================================================= */
 
-    padding: 0;
+.recipient-block { margin-bottom: .18in; font-family: "Libre Baskerville", Georgia, serif; font-size: 9.5pt; line-height: 1.45; }
+.recipient-title { font-weight: 700; }
+.recipient-school { font-weight: 700; text-transform: uppercase; }
+.recipient-address { font-size: 9pt; }
 
-    object-fit: contain;
+/* ========================================================= SALUTATION ========================================================= */
 
-    object-position: center top;
-}
+.salutation { margin-bottom: .14in; font-family: "Libre Baskerville", Georgia, serif; font-size: 9.5pt; line-height: 1.4; }
 
+/* ========================================================= LETTER BODY ========================================================= */
 
-/* =========================================================
-   LETTER DATE
-========================================================= */
+.letter-body { position: relative; z-index: 2; font-family: "Libre Baskerville", Georgia, serif; font-size: 9.2pt; line-height: 1.55; text-align: justify; }
+.letter-body p { margin-left: 0; margin-right: 0; }
+.letter-body strong { font-weight: 700; }
 
-.letter-date {
-    margin-top: .04in;
-    margin-bottom: .18in;
-
-    text-align: right;
-
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        serif;
-
-    font-size: 9.5pt;
-
-    line-height: 1.4;
-}
-
-
-/* =========================================================
-   RECIPIENT
-========================================================= */
-
-.recipient-block {
-    margin-bottom: .18in;
-
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        serif;
-
-    font-size: 9.5pt;
-
-    line-height: 1.45;
-}
-
-.recipient-title {
-    font-weight: 700;
-}
-
-.recipient-school {
-    font-weight: 700;
-
-    text-transform: uppercase;
-}
-
-.recipient-address {
-    font-size: 9pt;
-}
-
-
-/* =========================================================
-   SALUTATION
-========================================================= */
-
-.salutation {
-    margin-bottom: .14in;
-
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        serif;
-
-    font-size: 9.5pt;
-
-    line-height: 1.4;
-}
-
-
-/* =========================================================
-   LETTER BODY
-========================================================= */
-
-.letter-body {
-    position: relative;
-
-    z-index: 2;
-
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        serif;
-
-    font-size: 9.2pt;
-
-    line-height: 1.55;
-
-    text-align: justify;
-}
-
-
-/* =========================================================
-   FIRST "MAY I HAVE" PARAGRAPH
-========================================================= */
-
-.letter-body > p:first-child {
-
-    /* TOP MARGIN */
-    margin-top: .10in;
-
-    /* BOTTOM MARGIN */
-    margin-bottom: .20in;
-
-    padding: 0;
-
-    font-size: 9.2pt;
-
-    line-height: 1.55;
-
-    text-align: justify;
-}
-
-
-/* =========================================================
-   GENERAL LETTER PARAGRAPH
-========================================================= */
-
-.letter-body p {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.letter-body strong {
-    font-weight: 700;
-}
-
-
-/* =========================================================
-   STUDENT TABLE
-========================================================= */
+/* ========================================================= STUDENT TABLE ========================================================= */
 
 .student-details-table {
-    width: 100%;
-
-    border-collapse: collapse;
-
-    table-layout: fixed;
-
-    margin:
-        .16in 0 .20in;
-
-    font-family:
-        "Poppins",
-        Arial,
-        sans-serif;
-
-    font-size: 7.4pt;
-
-    color: #111;
+    width: 100%; border-collapse: collapse; table-layout: fixed;
+    margin: .16in 0 .20in;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 7.4pt; color: #111;
 }
 
-.student-details-table th,
-.student-details-table td {
-    border:
-        1px solid #303030;
-
-    padding:
-        5px 4px;
-
-    vertical-align: middle;
-
-    text-align: center;
-
-    word-break: break-word;
-
-    overflow-wrap: anywhere;
+.student-details-table th, .student-details-table td {
+    border: 1px solid #303030;
+    padding: 5px 4px;
+    vertical-align: middle; text-align: center;
+    word-break: break-word; overflow-wrap: anywhere;
 }
 
-.student-details-table th {
-    background: #f1f1f1;
+.student-details-table th { background: #f1f1f1; font-size: 6.8pt; font-weight: 700; line-height: 1.25; }
+.student-details-table td { min-height: 28px; font-size: 7.4pt; font-weight: 500; }
 
-    font-size: 6.8pt;
+.student-details-table th:nth-child(1) { width: 31%; }
+.student-details-table th:nth-child(2) { width: 20%; }
+.student-details-table th:nth-child(3) { width: 25%; }
+.student-details-table th:nth-child(4) { width: 24%; }
 
-    font-weight: 700;
+.student-details-table .nothing-follows { padding: 4px; font-family: "Libre Baskerville", Georgia, serif; font-size: 7.2pt; font-style: italic; font-weight: 400; }
 
-    line-height: 1.25;
-}
+/* ========================================================= REQUEST PARAGRAPH ========================================================= */
 
-.student-details-table td {
-    min-height: 28px;
+.request-paragraph { margin-top: .20in !important; margin-bottom: .16in !important; padding: 0 !important; font-family: "Libre Baskerville", Georgia, serif; font-size: 9.2pt; line-height: 1.55; text-align: justify; }
 
-    font-size: 7.4pt;
-
-    font-weight: 500;
-}
-
-.student-details-table th:nth-child(1) {
-    width: 31%;
-}
-
-.student-details-table th:nth-child(2) {
-    width: 20%;
-}
-
-.student-details-table th:nth-child(3) {
-    width: 25%;
-}
-
-.student-details-table th:nth-child(4) {
-    width: 24%;
-}
-
-.student-details-table .nothing-follows {
-    padding: 4px;
-
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        serif;
-
-    font-size: 7.2pt;
-
-    font-style: italic;
-
-    font-weight: 400;
-}
-
-
-/* =========================================================
-   REQUEST PARAGRAPH
-   THIS IS THE PARAGRAPH AFTER THE TABLE
-========================================================= */
-
-.request-paragraph {
-
-    margin-top: .20in !important;
-
-    margin-bottom: .16in !important;
-
-    padding: 0 !important;
-
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        serif;
-
-    font-size: 9.2pt;
-
-    line-height: 1.55;
-
-    text-align: justify;
-}
-
-
-/* =========================================================
-   REQUEST OPTIONS
-========================================================= */
+/* ========================================================= REQUEST OPTIONS ========================================================= */
 
 .letter-options {
-
-    margin-top: .14in;
-
-    margin-bottom: .18in;
-
-    padding: 0;
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    column-gap: .25in;
-
-    row-gap: .08in;
-
-    font-family:
-        "Poppins",
-        Arial,
-        sans-serif;
-
-    font-size: 8.2pt;
-
-    line-height: 1.35;
-
-    text-align: left;
+    margin-top: .14in; margin-bottom: .18in; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr;
+    column-gap: .25in; row-gap: .08in;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 8.2pt; line-height: 1.35; text-align: left;
 }
 
-.letter-option {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    min-height: .20in;
-
-    margin: 0;
-
-    padding: 0;
-}
+.letter-option { display: flex; align-items: center; gap: 7px; min-height: .20in; margin: 0; padding: 0; }
 
 .print-check {
-
-    width: 10px;
-    height: 10px;
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
+    width: 10px; height: 10px;
+    display: inline-flex; align-items: center; justify-content: center;
     flex-shrink: 0;
-
-    border:
-        1px solid #222;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 6.5px;
-
-    font-weight: 700;
-
-    line-height: 1;
+    border: 1px solid #222;
+    font-family: Arial, sans-serif; font-size: 6.5px; font-weight: 700; line-height: 1;
 }
 
-.print-check.active::after {
-    content: "✓";
-}
+.print-check.active::after { content: "\2713"; }
 
-
-/* =========================================================
-   PURPOSE
-========================================================= */
+/* ========================================================= PURPOSE ========================================================= */
 
 .purpose-preview {
-
     display: none;
-
-    margin-top: .14in;
-    margin-bottom: .14in;
-
+    margin-top: .14in; margin-bottom: .14in;
     padding: 7px 9px;
-
-    border-left:
-        2px solid var(--gold-dark);
-
+    border-left: 2px solid var(--gold-dark);
     background: #fafafa;
-
-    font-family:
-        "Poppins",
-        Arial,
-        sans-serif;
-
-    font-size: 7.8pt;
-
-    line-height: 1.4;
-
-    text-align: left;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 7.8pt; line-height: 1.4; text-align: left;
 }
 
-.purpose-preview.visible {
-    display: block;
-}
+.purpose-preview.visible { display: block; }
 
-
-/* =========================================================
-   SIGNATURE
-========================================================= */
+/* ========================================================= SIGNATURE ========================================================= */
 
 .signature-block {
-
-    position: absolute;
-
-    right: var(--paper-right);
-
-    bottom: 3.00in;
-
-    width: 3.25in;
-
-    text-align: center;
-
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        serif;
-
-    font-size: 9.5pt;
-
-    line-height: 1.35;
-
-    z-index: 5;
+    position: absolute; right: var(--paper-right); bottom: 3.00in;
+    width: 3.25in; text-align: center;
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 9.5pt; line-height: 1.35; z-index: 5;
 }
 
-.very-truly {
+.very-truly { margin-bottom: .34in; text-align: center; font-family: "Libre Baskerville", Georgia, serif; font-size: 9.5pt; }
+.signature-space { height: .05in; }
+.signature-name { display: block; text-align: center; font-size: 10pt; font-weight: 700; text-decoration: underline; text-decoration-thickness: .5px; text-underline-offset: 2px; white-space: nowrap; }
+.signature-title { margin-top: 3px; text-align: center; font-size: 8.8pt; }
 
-    margin-bottom: .34in;
-
-    text-align: center;
-
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        serif;
-
-    font-size: 9.5pt;
-}
-
-.signature-space {
-    height: .05in;
-}
-
-.signature-name {
-
-    display: block;
-
-    text-align: center;
-
-    font-size: 10pt;
-
-    font-weight: 700;
-
-    text-decoration: underline;
-
-    text-decoration-thickness: .5px;
-
-    text-underline-offset: 2px;
-
-    white-space: nowrap;
-}
-
-.signature-title {
-
-    margin-top: 3px;
-
-    text-align: center;
-
-    font-size: 8.8pt;
-}
-
-
-/* =========================================================
-   SCHOOL SEAL WARNING
-========================================================= */
+/* ========================================================= SCHOOL SEAL WARNING ========================================================= */
 
 .seal-warning {
-
-    position: absolute;
-
-    left: var(--paper-left);
-
-    bottom: 1.34in;
-
-    width: 2.10in;
-
-    text-align: center;
-
+    position: absolute; left: var(--paper-left); bottom: 1.34in;
+    width: 2.10in; text-align: center;
     font-family: Arial, sans-serif;
-
-    font-size: 6.8pt;
-
-    font-weight: 700;
-
-    line-height: 1.15;
-
-    text-transform: uppercase;
-
-    z-index: 5;
+    font-size: 6.8pt; font-weight: 700; line-height: 1.15;
+    text-transform: uppercase; z-index: 5;
 }
 
-
-/* =========================================================
-   MODAL
-========================================================= */
+/* ========================================================= MODAL ========================================================= */
 
 .modal-overlay {
-
-    position: fixed;
-
-    inset: 0;
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
+    position: fixed; inset: 0; display: none;
+    align-items: center; justify-content: center;
     padding: 20px;
-
-    background:
-        rgba(3,15,28,.65);
-
-    backdrop-filter:
-        blur(7px);
-
+    background: rgba(3,15,28,.65);
+    backdrop-filter: blur(7px);
     z-index: 1000;
 }
 
-.modal-overlay.show {
-    display: flex;
-}
+.modal-overlay.show { display: flex; }
 
 .modal-card {
-
-    width: 100%;
-
-    max-width: 420px;
-
-    padding: 30px;
-
+    width: 100%; max-width: 420px; padding: 30px;
     position: relative;
-
     background: #fff;
-
-    border:
-        1px solid var(--gray-200);
-
+    border: 1px solid var(--gray-200);
     border-radius: 16px;
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.25);
-
-    animation:
-        modalIn .22s ease;
+    box-shadow: 0 30px 80px rgba(0,0,0,.25);
+    animation: modalIn .22s ease;
 }
 
 @keyframes modalIn {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(12px)
-            scale(.98);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
+    from { opacity: 0; transform: translateY(12px) scale(.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .modal-close {
-
-    position: absolute;
-
-    top: 14px;
-    right: 14px;
-
-    width: 32px;
-    height: 32px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border: none;
-
-    border-radius: 8px;
-
+    position: absolute; top: 14px; right: 14px;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    border: none; border-radius: 8px;
     color: var(--gray-500);
-
-    background:
-        var(--gray-100);
+    background: var(--gray-100);
 }
 
-.modal-close:hover {
-    color: var(--danger);
-}
+.modal-close:hover { color: var(--danger); }
 
 .modal-icon {
-
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
     margin-bottom: 15px;
-
     color: var(--gold-dark);
-
     background: #faf5df;
-
-    border:
-        1px solid #eadb9e;
-
+    border: 1px solid #eadb9e;
     border-radius: 12px;
-
     font-size: 18px;
 }
 
-.modal-card h2 {
+.modal-card h2 { font-family: "Libre Baskerville", Georgia, serif; color: var(--navy); font-size: 20px; }
+.modal-card > p { margin-top: 5px; margin-bottom: 22px; color: var(--gray-500); font-size: 10px; line-height: 1.5; }
 
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        serif;
-
-    color: var(--navy);
-
-    font-size: 20px;
-}
-
-.modal-card > p {
-
-    margin-top: 5px;
-
-    margin-bottom: 22px;
-
-    color: var(--gray-500);
-
-    font-size: 10px;
-
-    line-height: 1.5;
-}
-
-.modal-form-group {
-    margin-bottom: 15px;
-}
-
-.modal-form-group label {
-
-    display: block;
-
-    margin-bottom: 6px;
-
-    color: var(--gray-700);
-
-    font-size: 9px;
-
-    font-weight: 600;
-}
+.modal-form-group { margin-bottom: 15px; }
+.modal-form-group label { display: block; margin-bottom: 6px; color: var(--gray-700); font-size: 9px; font-weight: 600; }
 
 .modal-form-group input {
-
-    width: 100%;
-
-    height: 42px;
-
-    padding: 0 12px;
-
-    outline: none;
-
-    color: var(--black);
-
+    width: 100%; height: 42px; padding: 0 12px;
+    outline: none; color: var(--black);
     background: #fff;
-
-    border:
-        1px solid var(--gray-300);
-
+    border: 1px solid var(--gray-300);
     border-radius: 8px;
-
     font-size: 10px;
 }
 
-.modal-form-group input:focus {
-
-    border-color:
-        var(--gold-dark);
-
-    box-shadow:
-        0 0 0 3px rgba(201,162,39,.10);
-}
+.modal-form-group input:focus { border-color: var(--gold-dark); box-shadow: 0 0 0 3px rgba(201,162,39,.10); }
 
 .modal-save {
-
-    width: 100%;
-
-    height: 43px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 8px;
-
-    margin-top: 8px;
-
-    border: none;
-
-    border-radius: 8px;
-
+    width: 100%; height: 43px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px; margin-top: 8px;
+    border: none; border-radius: 8px;
     color: #fff;
-
-    background:
-        linear-gradient(
-            135deg,
-            #c9a227,
-            #a98212
-        );
-
-    font-size: 10px;
-
-    font-weight: 600;
+    background: linear-gradient(135deg, #c9a227, #a98212);
+    font-size: 10px; font-weight: 600;
 }
 
-
-/* =========================================================
-   TOAST
-========================================================= */
+/* ========================================================= TOAST ========================================================= */
 
 .toast {
-
-    position: fixed;
-
-    right: 25px;
-    bottom: 25px;
-
+    position: fixed; right: 25px; bottom: 25px;
     min-width: 250px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
+    display: flex; align-items: center; gap: 10px;
     padding: 13px 16px;
-
     color: #fff;
-
     background: #183b2b;
-
     border-radius: 10px;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.20);
-
+    box-shadow: 0 15px 40px rgba(0,0,0,.20);
     font-size: 10px;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform:
-        translateY(15px);
-
+    opacity: 0; visibility: hidden;
+    transform: translateY(15px);
     transition: .25s ease;
-
     z-index: 2000;
 }
 
-.toast.show {
+.toast.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.toast.error { background: #5b1f1f; }
+.toast i { color: #76d89b; font-size: 14px; }
+.toast.error i { color: #e79a9a; }
 
-    opacity: 1;
-
-    visibility: visible;
-
-    transform:
-        translateY(0);
-}
-
-.toast i {
-    color: #76d89b;
-
-    font-size: 14px;
-}
-
-
-/* =========================================================
-   RESPONSIVE SCREEN
-========================================================= */
+/* ========================================================= RESPONSIVE SCREEN ========================================================= */
 
 @media screen and (max-width: 1200px) {
-
-    :root {
-        --sidebar-width: 370px;
-    }
-
-    .sidebar {
-        min-width: 370px;
-    }
-
-    .paper-container {
-        padding: 25px;
-    }
+    :root { --sidebar-width: 370px; }
+    .sidebar { min-width: 370px; }
+    .paper-container { padding: 25px; }
 }
-
 
 @media screen and (max-width: 1000px) {
-
-    .app {
-        flex-direction: column;
-    }
-
-    .sidebar {
-
-        width: 100%;
-        min-width: 0;
-
-        height: auto;
-    }
-
-    .form-container {
-
-        max-height: none;
-
-        overflow: visible;
-    }
-
-    .preview-area {
-
-        min-height: auto;
-    }
-
-    .preview-header {
-
-        padding: 0 22px;
-    }
-
-    .paper-container {
-
-        min-height: auto;
-
-        overflow: auto;
-    }
+    .app { flex-direction: column; }
+    .sidebar { width: 100%; min-width: 0; height: auto; }
+    .form-container { max-height: none; overflow: visible; }
+    .preview-area { min-height: auto; }
+    .preview-header { padding: 0 22px; }
+    .paper-container { min-height: auto; overflow: auto; }
 }
-
 
 @media screen and (max-width: 700px) {
-
-    .brand {
-        padding: 20px;
-    }
-
-    .system-heading {
-        padding: 18px 20px 10px;
-    }
-
-    .form-container {
-        padding:
-            0 20px 15px;
-    }
-
-    .sidebar-actions {
-        padding:
-            12px 20px 16px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .request-options {
-        grid-template-columns: 1fr;
-    }
-
-    .preview-header {
-
-        height: auto;
-
-        min-height: 75px;
-
-        padding:
-            15px 18px;
-
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        gap: 10px;
-    }
-
-    .paper-container {
-
-        justify-content: flex-start;
-
-        padding:
-            20px 10px;
-    }
-
-    /*
-       Keep the paper REAL SIZE.
-       User can horizontally scroll.
-    */
-
-    .letter-paper {
-        transform: none !important;
-    }
+    .brand { padding: 20px; }
+    .system-heading { padding: 18px 20px 10px; }
+    .form-container { padding: 0 20px 15px; }
+    .sidebar-actions { padding: 12px 20px 16px; }
+    .form-row { grid-template-columns: 1fr; }
+    .request-options { grid-template-columns: 1fr; }
+    .preview-header { height: auto; min-height: 75px; padding: 15px 18px; align-items: flex-start; flex-direction: column; gap: 10px; }
+    .paper-container { justify-content: flex-start; padding: 20px 10px; }
+    .letter-paper { transform: none !important; }
 }
 
+/* ========================================================= ACCESSIBILITY ========================================================= */
 
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
-
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-
-    outline:
-        2px solid var(--gold);
-
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--gold);
     outline-offset: 2px;
 }
 
-::selection {
+::selection { color: #fff; background: var(--navy); }
+.no-print { display: block; }
 
-    color: #fff;
-
-    background:
-        var(--navy);
-}
-
-.no-print {
-    display: block;
-}
-
-
-/* =========================================================
-   PRINT SETTINGS
-   EXACT LETTER / SHORT BOND
+/* ========================================================= PRINT SETTINGS =========================================================
+   EXACT LETTER / SHORT BOND, PREVIEW = PRINT 1:1
 ========================================================= */
 
-@page {
-
-    size: Letter portrait;
-
-    margin: 0;
-}
-
+@page { size: Letter portrait; margin: 0; }
 
 @media print {
 
-    /* -----------------------------------------------------
-       PAGE
-    ----------------------------------------------------- */
-
-    html,
-    body {
-
-        width: 8.5in !important;
-
-        height: 11in !important;
-
-        min-width: 8.5in !important;
-
-        min-height: 11in !important;
-
-        margin: 0 !important;
-
-        padding: 0 !important;
-
-        background: #fff !important;
-
-        overflow: hidden !important;
-
-        -webkit-print-color-adjust: exact !important;
-
-        print-color-adjust: exact !important;
-    }
-
-
-    *,
-    *::before,
-    *::after {
-
-        -webkit-print-color-adjust: exact !important;
-
-        print-color-adjust: exact !important;
-    }
-
-
-    /* -----------------------------------------------------
-       HIDE SCREEN UI
-    ----------------------------------------------------- */
-
-    .sidebar,
-    .preview-header,
-    .modal-overlay,
-    .toast,
-    .no-print {
-
-        display: none !important;
-    }
-
-
-    /* -----------------------------------------------------
-       APP
-    ----------------------------------------------------- */
-
-    .app {
-
-        display: block !important;
-
-        width: 8.5in !important;
-
-        height: 11in !important;
-
-        min-height: 11in !important;
-
-        margin: 0 !important;
-
-        padding: 0 !important;
-    }
-
-
-    .preview-area {
-
-        display: block !important;
-
-        width: 8.5in !important;
-
-        height: 11in !important;
-
-        min-height: 11in !important;
-
-        margin: 0 !important;
-
-        padding: 0 !important;
-
-        overflow: hidden !important;
-
-        background: #fff !important;
-    }
-
-
-    .paper-container {
-
-        display: block !important;
-
-        width: 8.5in !important;
-
-        height: 11in !important;
-
-        min-height: 11in !important;
-
-        margin: 0 !important;
-
-        padding: 0 !important;
-
-        overflow: hidden !important;
-
-        background: #fff !important;
-    }
-
-
-    /* -----------------------------------------------------
-       REAL PRINT PAPER
-    ----------------------------------------------------- */
-
-    .letter-paper {
-
-        display: block !important;
-
-        position: relative !important;
-
-        width: 8.5in !important;
-
-        height: 11in !important;
-
-        min-width: 8.5in !important;
-
-        min-height: 11in !important;
-
-        margin: 0 !important;
-
-        padding:
-            .45in
-            .65in
-            .55in !important;
-
-        box-sizing: border-box !important;
-
-        transform: none !important;
-
-        box-shadow: none !important;
-
-        border: none !important;
-
-        overflow: hidden !important;
-
-        page-break-before: avoid !important;
-
-        page-break-after: avoid !important;
-
-        page-break-inside: avoid !important;
-    }
-
-
-    /* -----------------------------------------------------
-       HEADER
-    ----------------------------------------------------- */
-
-    .official-header {
-
-        width: 8.5in !important;
-
-        max-width: 8.5in !important;
-
-        margin:
-            -.45in
-            -.65in
-            .16in !important;
-
-        padding: 0 !important;
-
-        overflow: hidden !important;
-
-        line-height: 0 !important;
-    }
-
-
-    .header-image {
-
-        display: block !important;
-
-        width: 8.5in !important;
-
-        max-width: 8.5in !important;
-
-        height: auto !important;
-
-        max-height: none !important;
-
-        margin: 0 !important;
-
-        padding: 0 !important;
-
-        object-fit: contain !important;
-
-        object-position: center top !important;
-    }
-
-
-    /* -----------------------------------------------------
-       MAY I HAVE PARAGRAPH
-    ----------------------------------------------------- */
-
-    .letter-body > p:first-child {
-
-        margin-top: .10in !important;
-
-        margin-bottom: .20in !important;
-
-        line-height: 1.55 !important;
-    }
-
-
-    /* -----------------------------------------------------
-       TABLE
-    ----------------------------------------------------- */
-
-    .student-details-table {
-
-        margin:
-            .16in 0 .20in !important;
-
-        page-break-inside: avoid !important;
-    }
-
-    .student-details-table tr {
-
-        page-break-inside: avoid !important;
-    }
-
-
-    /* -----------------------------------------------------
-       REQUEST PARAGRAPH
-    ----------------------------------------------------- */
-
-    .request-paragraph {
-
-        margin-top: .20in !important;
-
-        margin-bottom: .16in !important;
-
-        line-height: 1.55 !important;
-    }
-
-
-    /* -----------------------------------------------------
-       OPTIONS
-    ----------------------------------------------------- */
-
-    .letter-options {
-
-        margin-top: .14in !important;
-
-        margin-bottom: .18in !important;
-
-        column-gap: .25in !important;
-
-        row-gap: .08in !important;
-    }
-
-
-    /* -----------------------------------------------------
-       SIGNATURE
-    ----------------------------------------------------- */
-
-    .signature-block {
-
-        position: absolute !important;
-
-        right: .65in !important;
-
-        bottom: 1.00in !important;
-
-        width: 3.25in !important;
-    }
-
-
-    /* -----------------------------------------------------
-       SEAL
-    ----------------------------------------------------- */
-
-    .seal-warning {
-
-        position: absolute !important;
-
-        left: .65in !important;
-
-        bottom: .34in !important;
-
-        width: 2.10in !important;
-    }
-
-
-    /* -----------------------------------------------------
-       LINKS / TABLE
-    ----------------------------------------------------- */
-
-    a {
-
-        color: inherit !important;
-
-        text-decoration: none !important;
-    }
-
-    table {
-
-        border-collapse: collapse !important;
-    }
-
-    img {
-
-        max-width: none !important;
-    }
-}
-
-/* =========================================================
-   PRINT SETTINGS
-   EXACT LETTER / SHORT BOND
-   PREVIEW = PRINT 1:1
-========================================================= */
-
-@page {
-    size: Letter portrait;
-    margin: 0;
-}
-
-@media print {
-
-    /* =====================================================
-       BASIC PAGE
-    ===================================================== */
-
-    html,
-    body {
-        width: 8.5in !important;
-        height: 11in !important;
-
-        min-width: 8.5in !important;
-        min-height: 11in !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
+    html, body {
+        width: 8.5in !important; height: 11in !important;
+        min-width: 8.5in !important; min-height: 11in !important;
+        margin: 0 !important; padding: 0 !important;
         background: #ffffff !important;
-
         overflow: hidden !important;
-
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
 
-
-    /* =====================================================
-       HIDE APPLICATION UI
-    ===================================================== */
-
-    .sidebar,
-    .preview-header,
-    .modal-overlay,
-    .toast,
-    .no-print {
-        display: none !important;
-    }
-
-
-    /* =====================================================
-       APPLICATION
-    ===================================================== */
+    .sidebar, .preview-header, .modal-overlay, .toast, .no-print { display: none !important; }
 
     .app {
         display: block !important;
-
-        width: 8.5in !important;
-        height: 11in !important;
-
-        min-width: 8.5in !important;
-        min-height: 11in !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
+        width: 8.5in !important; height: 11in !important;
+        min-width: 8.5in !important; min-height: 11in !important;
+        margin: 0 !important; padding: 0 !important;
         overflow: hidden !important;
     }
-
-
-    /* =====================================================
-       PREVIEW AREA
-    ===================================================== */
 
     .preview-area {
         display: block !important;
-
-        width: 8.5in !important;
-        height: 11in !important;
-
-        min-width: 8.5in !important;
-        min-height: 11in !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
+        width: 8.5in !important; height: 11in !important;
+        min-width: 8.5in !important; min-height: 11in !important;
+        margin: 0 !important; padding: 0 !important;
         overflow: hidden !important;
-
         background: #ffffff !important;
     }
-
-
-    /* =====================================================
-       PAPER CONTAINER
-
-       IMPORTANT:
-       No scaling.
-       No extra padding.
-       No centering.
-    ===================================================== */
 
     .paper-container {
         display: block !important;
-
-        width: 8.5in !important;
-        height: 11in !important;
-
-        min-width: 8.5in !important;
-        min-height: 11in !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
+        width: 8.5in !important; height: 11in !important;
+        min-width: 8.5in !important; min-height: 11in !important;
+        margin: 0 !important; padding: 0 !important;
         overflow: hidden !important;
-
         background: #ffffff !important;
     }
 
-
-    /* =====================================================
-       LETTER PAPER
-
-       USE EXACT SAME DIMENSIONS AS SCREEN
-    ===================================================== */
-
     .letter-paper {
         display: block !important;
-
         position: relative !important;
-
-        width: 8.5in !important;
-        height: 11in !important;
-
-        min-width: 8.5in !important;
-        min-height: 11in !important;
-
-        max-width: none !important;
-        max-height: none !important;
-
+        width: 8.5in !important; height: 11in !important;
+        min-width: 8.5in !important; min-height: 11in !important;
+        max-width: none !important; max-height: none !important;
         margin: 0 !important;
-
-        padding:
-            var(--paper-top)
-            var(--paper-right)
-            var(--paper-bottom)
-            var(--paper-left) !important;
-
+        padding: var(--paper-top) var(--paper-right) var(--paper-bottom) var(--paper-left) !important;
         box-sizing: border-box !important;
-
         background: #ffffff !important;
-
         color: #111111 !important;
-
-        transform: none !important;
-        zoom: 1 !important;
-
-        box-shadow: none !important;
-
-        border: none !important;
-
+        transform: none !important; zoom: 1 !important;
+        box-shadow: none !important; border: none !important;
         overflow: hidden !important;
-
-        page-break-before: avoid !important;
-        page-break-after: avoid !important;
-        page-break-inside: avoid !important;
-
-        break-before: avoid !important;
-        break-after: avoid !important;
-        break-inside: avoid !important;
+        page-break-before: avoid !important; page-break-after: avoid !important; page-break-inside: avoid !important;
+        break-before: avoid !important; break-after: avoid !important; break-inside: avoid !important;
     }
-
-
-    /* =====================================================
-       PAPER BORDER
-    ===================================================== */
 
     .letter-paper::before {
         display: block !important;
-
-        top: .18in !important;
-        right: .18in !important;
-        bottom: .18in !important;
-        left: .18in !important;
-
-        border:
-            1px solid rgba(16,42,67,.12) !important;
+        top: .18in !important; right: .18in !important; bottom: .18in !important; left: .18in !important;
+        border: 1px solid rgba(16,42,67,.12) !important;
     }
-
-
-    /* =====================================================
-       OFFICIAL HEADER
-
-       EXACT SAME AS SCREEN
-    ===================================================== */
 
     .official-header {
-        position: relative !important;
-
-        z-index: 5 !important;
-
-        width: var(--paper-width) !important;
-        max-width: var(--paper-width) !important;
-
-        margin:
-            calc(-1 * var(--paper-top))
-            calc(-1 * var(--paper-left))
-            .16in !important;
-
-        padding: 0 !important;
-
-        text-align: center !important;
-
-        line-height: 0 !important;
-
-        overflow: hidden !important;
+        position: relative !important; z-index: 5 !important;
+        width: var(--paper-width) !important; max-width: var(--paper-width) !important;
+        margin: calc(-1 * var(--paper-top)) calc(-1 * var(--paper-left)) .16in !important;
+        padding: 0 !important; text-align: center !important; line-height: 0 !important; overflow: hidden !important;
     }
-
 
     .header-image {
         display: block !important;
-
-        width: var(--paper-width) !important;
-        max-width: var(--paper-width) !important;
-
-        height: auto !important;
-
-        max-height: none !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        object-fit: contain !important;
-
-        object-position: center top !important;
+        width: var(--paper-width) !important; max-width: var(--paper-width) !important;
+        height: auto !important; max-height: none !important;
+        margin: 0 !important; padding: 0 !important;
+        object-fit: contain !important; object-position: center top !important;
     }
 
-
-    /* =====================================================
-       DATE
-    ===================================================== */
-
-    .letter-date {
-        margin-top: .04in !important;
-        margin-bottom: .18in !important;
-
-        font-size: 9.5pt !important;
-        line-height: 1.4 !important;
-    }
-
-
-    /* =====================================================
-       RECIPIENT
-    ===================================================== */
-
-    .recipient-block {
-        margin-bottom: .18in !important;
-
-        font-size: 9.5pt !important;
-        line-height: 1.45 !important;
-    }
-
-
-    /* =====================================================
-       SALUTATION
-    ===================================================== */
-
-    .salutation {
-        margin-bottom: .14in !important;
-
-        font-size: 9.5pt !important;
-        line-height: 1.4 !important;
-    }
-
-
-    /* =====================================================
-       LETTER BODY
-    ===================================================== */
-
-    .letter-body {
-        position: relative !important;
-
-        z-index: 2 !important;
-
-        font-size: 9.2pt !important;
-
-        line-height: 1.55 !important;
-
-        text-align: justify !important;
-    }
-
-
-    /* =====================================================
-       MAY I HAVE PARAGRAPH
-
-       SAME AS SCREEN
-    ===================================================== */
-
-    .letter-body > p:first-child {
-        margin-top: .10in !important;
-        margin-bottom: .20in !important;
-
-        padding: 0 !important;
-
-        font-size: 9.2pt !important;
-
-        line-height: 1.55 !important;
-
-        text-align: justify !important;
-    }
-
-
-    /* =====================================================
-       STUDENT TABLE
-    ===================================================== */
+    .letter-date { margin-top: .04in !important; margin-bottom: .18in !important; font-size: 9.5pt !important; line-height: 1.4 !important; }
+    .recipient-block { margin-bottom: .18in !important; font-size: 9.5pt !important; line-height: 1.45 !important; }
+    .salutation { margin-bottom: .14in !important; font-size: 9.5pt !important; line-height: 1.4 !important; }
+    .letter-body { position: relative !important; z-index: 2 !important; font-size: 9.2pt !important; line-height: 1.55 !important; text-align: justify !important; }
+    .letter-intro { margin-top: .10in !important; margin-bottom: .20in !important; padding: 0 !important; font-size: 9.2pt !important; line-height: 1.55 !important; text-align: justify !important; }
 
     .student-details-table {
-        width: 100% !important;
-
-        margin:
-            .16in 0 .20in !important;
-
-        border-collapse: collapse !important;
-
-        table-layout: fixed !important;
-
+        width: 100% !important; margin: .16in 0 .20in !important;
+        border-collapse: collapse !important; table-layout: fixed !important;
         font-size: 7.4pt !important;
-
-        page-break-inside: avoid !important;
-
-        break-inside: avoid !important;
+        page-break-inside: avoid !important; break-inside: avoid !important;
     }
 
-
-    .student-details-table th,
-    .student-details-table td {
-        padding:
-            5px 4px !important;
-
-        border:
-            1px solid #303030 !important;
-
-        vertical-align: middle !important;
-
-        text-align: center !important;
-
-        word-break: break-word !important;
-
-        overflow-wrap: anywhere !important;
+    .student-details-table th, .student-details-table td {
+        padding: 5px 4px !important;
+        border: 1px solid #303030 !important;
+        vertical-align: middle !important; text-align: center !important;
+        word-break: break-word !important; overflow-wrap: anywhere !important;
     }
 
+    .student-details-table th { background: #f1f1f1 !important; font-size: 6.8pt !important; font-weight: 700 !important; line-height: 1.25 !important; }
+    .student-details-table td { font-size: 7.4pt !important; font-weight: 500 !important; }
+    .student-details-table tr { page-break-inside: avoid !important; break-inside: avoid !important; }
 
-    .student-details-table th {
-        background: #f1f1f1 !important;
-
-        font-size: 6.8pt !important;
-
-        font-weight: 700 !important;
-
-        line-height: 1.25 !important;
-    }
-
-
-    .student-details-table td {
-        font-size: 7.4pt !important;
-
-        font-weight: 500 !important;
-    }
-
-
-    .student-details-table tr {
-        page-break-inside: avoid !important;
-
-        break-inside: avoid !important;
-    }
-
-
-    /* =====================================================
-       REQUEST PARAGRAPH
-    ===================================================== */
-
-    .request-paragraph {
-        margin-top: .20in !important;
-
-        margin-bottom: .16in !important;
-
-        padding: 0 !important;
-
-        font-size: 9.2pt !important;
-
-        line-height: 1.55 !important;
-
-        text-align: justify !important;
-    }
-
-
-    /* =====================================================
-       REQUEST OPTIONS
-    ===================================================== */
+    .request-paragraph { margin-top: .20in !important; margin-bottom: .16in !important; padding: 0 !important; font-size: 9.2pt !important; line-height: 1.55 !important; text-align: justify !important; }
 
     .letter-options {
-        margin-top: .14in !important;
-
-        margin-bottom: .18in !important;
-
-        padding: 0 !important;
-
-        display: grid !important;
-
-        grid-template-columns:
-            1fr 1fr !important;
-
-        column-gap: .25in !important;
-
-        row-gap: .08in !important;
-
-        font-size: 8.2pt !important;
-
-        line-height: 1.35 !important;
+        margin-top: .14in !important; margin-bottom: .18in !important; padding: 0 !important;
+        display: grid !important; grid-template-columns: 1fr 1fr !important;
+        column-gap: .25in !important; row-gap: .08in !important;
+        font-size: 8.2pt !important; line-height: 1.35 !important;
     }
 
-
-    .letter-option {
-        display: flex !important;
-
-        align-items: center !important;
-
-        gap: 7px !important;
-
-        min-height: .20in !important;
-
-        margin: 0 !important;
-
-        padding: 0 !important;
-    }
-
+    .letter-option { display: flex !important; align-items: center !important; gap: 7px !important; min-height: .20in !important; margin: 0 !important; padding: 0 !important; }
 
     .print-check {
-        width: 10px !important;
-        height: 10px !important;
-
-        display: inline-flex !important;
-
-        align-items: center !important;
-        justify-content: center !important;
-
+        width: 10px !important; height: 10px !important;
+        display: inline-flex !important; align-items: center !important; justify-content: center !important;
         flex-shrink: 0 !important;
-
-        border:
-            1px solid #222 !important;
-
+        border: 1px solid #222 !important;
         font-size: 6.5px !important;
     }
 
-
-    /* =====================================================
-       PURPOSE
-    ===================================================== */
-
-    .purpose-preview {
-        margin-top: .14in !important;
-
-        margin-bottom: .14in !important;
-
-        padding: 7px 9px !important;
-
-        font-size: 7.8pt !important;
-
-        line-height: 1.4 !important;
-    }
-
-
-    /* =====================================================
-       SIGNATURE
-
-       IMPORTANT:
-       SAME VALUE AS SCREEN.
-       DO NOT CHANGE POSITION DURING PRINT.
-    ===================================================== */
+    .purpose-preview { margin-top: .14in !important; margin-bottom: .14in !important; padding: 7px 9px !important; font-size: 7.8pt !important; line-height: 1.4 !important; }
 
     .signature-block {
         position: absolute !important;
-
-        right: var(--paper-right) !important;
-
-        bottom: 3.00in !important;
-
-        width: 3.25in !important;
-
-        text-align: center !important;
-
-        font-size: 9.5pt !important;
-
-        line-height: 1.35 !important;
-
-        z-index: 5 !important;
+        right: var(--paper-right) !important; bottom: 3.00in !important;
+        width: 3.25in !important; text-align: center !important;
+        font-size: 9.5pt !important; line-height: 1.35 !important; z-index: 5 !important;
     }
 
-
-    .very-truly {
-        margin-bottom: .34in !important;
-
-        font-size: 9.5pt !important;
-
-        text-align: center !important;
-    }
-
-
-    .signature-space {
-        height: .05in !important;
-    }
-
-
-    .signature-name {
-        font-size: 10pt !important;
-
-        font-weight: 700 !important;
-
-        text-decoration: underline !important;
-
-        white-space: nowrap !important;
-    }
-
-
-    .signature-title {
-        margin-top: 3px !important;
-
-        font-size: 8.8pt !important;
-    }
-
-
-    /* =====================================================
-       SCHOOL SEAL WARNING
-
-       SAME VALUE AS SCREEN.
-    ===================================================== */
+    .very-truly { margin-bottom: .34in !important; font-size: 9.5pt !important; text-align: center !important; }
+    .signature-space { height: .05in !important; }
+    .signature-name { font-size: 10pt !important; font-weight: 700 !important; text-decoration: underline !important; white-space: nowrap !important; }
+    .signature-title { margin-top: 3px !important; font-size: 8.8pt !important; }
 
     .seal-warning {
         position: absolute !important;
-
-        left: var(--paper-left) !important;
-
-        bottom: 1.34in !important;
-
-        width: 2.10in !important;
-
-        text-align: center !important;
-
-        font-size: 6.8pt !important;
-
-        font-weight: 700 !important;
-
-        line-height: 1.15 !important;
-
-        z-index: 5 !important;
+        left: var(--paper-left) !important; bottom: 1.34in !important;
+        width: 2.10in !important; text-align: center !important;
+        font-size: 6.8pt !important; font-weight: 700 !important; line-height: 1.15 !important; z-index: 5 !important;
     }
 
+    img { max-width: none !important; }
+    table { border-collapse: collapse !important; }
+    a { color: inherit !important; text-decoration: none !important; }
 
-    /* =====================================================
-       IMAGES
-    ===================================================== */
-
-    img {
-        max-width: none !important;
-    }
-
-
-    /* =====================================================
-       TABLES
-    ===================================================== */
-
-    table {
-        border-collapse: collapse !important;
-    }
-
-
-    /* =====================================================
-       LINKS
-    ===================================================== */
-
-    a {
-        color: inherit !important;
-
-        text-decoration: none !important;
-    }
-
-
-    /* =====================================================
-       COLOR PRINTING
-    ===================================================== */
-
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         -webkit-print-color-adjust: exact !important;
-
         print-color-adjust: exact !important;
     }
 }

@@ -1,1214 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ASCB Office of the Registrar - Form 137 Request System">
+<title>ASCB | Form 137 Request</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="ASCB Office of the Registrar - Form 137 Request System"
-    >
-
-    <title>
-        ASCB | Form 137 Request
-    </title>
-
-
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-
-    <!-- =====================================================
-         FONT AWESOME
-    ====================================================== -->
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
-
-    <!-- =====================================================
-         CUSTOM CSS
-    ====================================================== -->
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
-
-
-<!-- =========================================================
-     APPLICATION
-========================================================= -->
 
 <div class="app">
 
-
-    <!-- =====================================================
-         LEFT SIDEBAR
-    ====================================================== -->
-
+    <!-- ============================================= SIDEBAR ============================================= -->
     <aside class="sidebar">
 
-
-        <!-- BRAND -->
         <div class="brand">
-
-            <div class="brand-logo">
-
-                <i class="fa-solid fa-building-columns"></i>
-
-            </div>
-
-
+            <div class="brand-logo"><i class="fa-solid fa-building-columns"></i></div>
             <div class="brand-content">
-
-                <h1>
-                    ASCB
-                </h1>
-
-                <span>
-                    OFFICE OF THE REGISTRAR
-                </span>
-
+                <h1>ASCB</h1>
+                <span>OFFICE OF THE REGISTRAR</span>
             </div>
-
         </div>
-
-
-        <!-- DIVIDER -->
 
         <div class="sidebar-divider"></div>
 
-
-        <!-- SYSTEM TITLE -->
-
         <div class="system-heading">
-
-            <span class="system-label">
-                DOCUMENT MANAGEMENT
-            </span>
-
-            <h2>
-                Form 137
-            </h2>
-
-            <p>
-                Request Letter Generator
-            </p>
-
+            <span class="system-label">DOCUMENT MANAGEMENT</span>
+            <h2>Form 137</h2>
+            <p>Request Letter Generator</p>
         </div>
-
-
-        <!-- =================================================
-             FORM
-        ================================================== -->
 
         <div class="form-container">
 
-
-            <!-- =================================================
-                 STUDENT INFORMATION
-            ================================================== -->
-
+            <!-- STUDENT INFORMATION -->
             <section class="form-section">
-
                 <div class="section-heading">
-
-                    <span class="section-icon">
-                        <i class="fa-solid fa-user-graduate"></i>
-                    </span>
-
+                    <span class="section-icon"><i class="fa-solid fa-user-graduate"></i></span>
                     <div>
-
-                        <h3>
-                            Student Information
-                        </h3>
-
-                        <p>
-                            Enter the student's details
-                        </p>
-
+                        <h3>Student Information</h3>
+                        <p>Add one or more students for this request</p>
                     </div>
-
                 </div>
 
-
-                <!-- STUDENT NAME -->
-
                 <div class="form-group">
-
-                    <label for="studentName">
-                        Student Name
-                    </label>
-
+                    <label for="studentName">Student Name</label>
                     <div class="input-wrapper">
-
                         <i class="fa-regular fa-user"></i>
-
-                        <input
-                            type="text"
-                            id="studentName"
-                            placeholder="Last Name, First Name, Middle Name"
-                            autocomplete="off"
-                        >
-
+                        <input type="text" id="studentName" placeholder="Last Name, First Name, Middle Name" autocomplete="off">
                     </div>
-
                 </div>
 
-
-                <!-- ADMITTED TO -->
-
                 <div class="form-group">
-
-                    <label for="courseSelect">
-                        Admitted To / Course
-                    </label>
-
+                    <label for="courseSelect">Admitted To / Course</label>
                     <div class="select-add-wrapper">
-
                         <div class="input-wrapper">
-
                             <i class="fa-solid fa-graduation-cap"></i>
-
                             <select id="courseSelect">
-
-                                <option value="">
-                                    Select Course
-                                </option>
-
-                                <option value="BSIT">
-                                    BSIT
-                                </option>
-
-                                <option value="BSCS">
-                                    BSCS
-                                </option>
-
-                                <option value="BSIS">
-                                    BSIS
-                                </option>
-
-                                <option value="BEED">
-                                    BEED
-                                </option>
-
-                                <option value="BSBA-MM">
-                                    BSBA-MM
-                                </option>
-
-                                <option value="BSBA-FM">
-                                    BSBA-FM
-                                </option>
-
-                                <option value="BSBA-HRDM">
-                                    BSBA-HRDM
-                                </option>
-
-                                <option value="BSED-ENGLISH">
-                                    BSED-ENGLISH
-                                </option>
-
+                                <option value="">Select Course</option>
                             </select>
-
                         </div>
-
-
-                        <button
-                            type="button"
-                            class="add-btn"
-                            id="addCourseBtn"
-                            title="Add Course"
-                        >
-
+                        <button type="button" class="add-btn" id="addCourseBtn" title="Add Course">
                             <i class="fa-solid fa-plus"></i>
-
                         </button>
-
                     </div>
-
                 </div>
-
-
-                <!-- SCHOOL -->
-
-                <div class="form-group">
-
-                    <label for="schoolSelect">
-                        Previous / Last School Attended
-                    </label>
-
-                    <div class="select-add-wrapper">
-
-                        <div class="input-wrapper">
-
-                            <i class="fa-solid fa-school"></i>
-
-                            <select id="schoolSelect">
-
-                                <option value="">
-                                    Select School
-                                </option>
-
-                                <option value="ANDRES SORIANO COLLEGES OF BISLIG, INC.">
-                                    ANDRES SORIANO COLLEGES OF BISLIG, INC.
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <button
-                            type="button"
-                            class="add-btn"
-                            id="addSchoolBtn"
-                            title="Add School"
-                        >
-
-                            <i class="fa-solid fa-plus"></i>
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- SCHOOL ADDRESS -->
-
-                <div class="form-group">
-
-                    <label for="schoolAddress">
-                        School Address
-                    </label>
-
-                    <div class="input-wrapper">
-
-                        <i class="fa-solid fa-location-dot"></i>
-
-                        <input
-                            type="text"
-                            id="schoolAddress"
-                            placeholder="School address"
-                            autocomplete="off"
-                        >
-
-                    </div>
-
-                </div>
-
-
-                <!-- SCHOOL YEAR -->
 
                 <div class="form-row">
-
                     <div class="form-group">
-
-                        <label for="schoolYear">
-                            Last School Year Attended
-                        </label>
-
+                        <label for="schoolYear">Last School Year Attended</label>
                         <div class="input-wrapper">
-
                             <i class="fa-regular fa-calendar"></i>
-
-                            <input
-                                type="text"
-                                id="schoolYear"
-                                placeholder="e.g. 2023-2024"
-                                autocomplete="off"
-                            >
-
+                            <input type="text" id="schoolYear" placeholder="e.g. 2023-2024" autocomplete="off">
                         </div>
-
                     </div>
-
 
                     <div class="form-group">
-
-                        <label for="yearSection">
-                            Year & Section
-                        </label>
-
+                        <label for="yearSection">Year & Section</label>
                         <div class="input-wrapper">
-
                             <i class="fa-solid fa-users"></i>
-
-                            <input
-                                type="text"
-                                id="yearSection"
-                                placeholder="e.g. XII-HUMSS B"
-                                autocomplete="off"
-                            >
-
+                            <input type="text" id="yearSection" placeholder="e.g. XII-HUMSS B" autocomplete="off">
                         </div>
-
                     </div>
-
                 </div>
 
+                <div class="form-group">
+                    <button type="button" class="add-student-btn" id="addStudentBtn">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Add Student to This Request
+                    </button>
+                </div>
+
+                <div class="students-list" id="studentsListContainer"></div>
             </section>
 
-
-
-            <!-- =================================================
-                 REQUEST DETAILS
-            ================================================== -->
-
+            <!-- SCHOOL (RECIPIENT) -->
             <section class="form-section">
-
                 <div class="section-heading">
-
-                    <span class="section-icon">
-                        <i class="fa-solid fa-file-signature"></i>
-                    </span>
-
+                    <span class="section-icon"><i class="fa-solid fa-school"></i></span>
                     <div>
-
-                        <h3>
-                            Request Details
-                        </h3>
-
-                        <p>
-                            Select request options
-                        </p>
-
+                        <h3>Receiving School</h3>
+                        <p>One recipient per request letter</p>
                     </div>
-
                 </div>
 
-
-                <!-- REQUEST NUMBER -->
-
                 <div class="form-group">
-
-                    <label>
-                        Request Type
-                    </label>
-
-
-                    <div class="request-options">
-
-
-                        <label class="check-option">
-
-                            <input
-                                type="checkbox"
-                                id="firstRequest"
-                            >
-
-                            <span class="check-box">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-
-                            <span>
-                                1st Request
-                            </span>
-
-                        </label>
-
-
-                        <label class="check-option">
-
-                            <input
-                                type="checkbox"
-                                id="secondRequest"
-                            >
-
-                            <span class="check-box">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-
-                            <span>
-                                2nd Request
-                            </span>
-
-                        </label>
-
+                    <label for="schoolSelect">Previous / Last School Attended</label>
+                    <div class="select-add-wrapper">
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-school"></i>
+                            <select id="schoolSelect">
+                                <option value="">Select School</option>
+                            </select>
+                        </div>
+                        <button type="button" class="add-btn" id="addSchoolBtn" title="Add School">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
                     </div>
-
+                    <p class="field-hint">Double-click an item in a dropdown to remove it.</p>
                 </div>
 
-
-                <!-- URGENCY -->
-
                 <div class="form-group">
-
-                    <label>
-                        Processing
-                    </label>
-
-
-                    <div class="request-options">
-
-
-                        <label class="check-option">
-
-                            <input
-                                type="checkbox"
-                                id="urgentRequest"
-                            >
-
-                            <span class="check-box">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-
-                            <span>
-                                Urgent
-                            </span>
-
-                        </label>
-
-
-                        <label class="check-option">
-
-                            <input
-                                type="checkbox"
-                                id="bearerRequest"
-                            >
-
-                            <span class="check-box">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-
-                            <span>
-                                Entrust to Bearer
-                            </span>
-
-                        </label>
-
-                    </div>
-
-                </div>
-
-
-                <!-- REQUEST DATE -->
-
-                <div class="form-group">
-
-                    <label for="requestDate">
-                        Date
-                    </label>
-
+                    <label for="schoolAddress">School Address</label>
                     <div class="input-wrapper">
-
-                        <i class="fa-regular fa-calendar-days"></i>
-
-                        <input
-                            type="date"
-                            id="requestDate"
-                        >
-
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" id="schoolAddress" placeholder="School address" autocomplete="off">
                     </div>
-
                 </div>
-
             </section>
 
-
-
-            <!-- =================================================
-                 PURPOSE
-            ================================================== -->
-
+            <!-- REQUEST DETAILS -->
             <section class="form-section">
-
                 <div class="section-heading">
-
-                    <span class="section-icon">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                    </span>
-
+                    <span class="section-icon"><i class="fa-solid fa-file-signature"></i></span>
                     <div>
-
-                        <h3>
-                            Additional Information
-                        </h3>
-
-                        <p>
-                            Optional details
-                        </p>
-
+                        <h3>Request Details</h3>
+                        <p>Select request options</p>
                     </div>
-
                 </div>
-
 
                 <div class="form-group">
-
-                    <label for="purpose">
-                        Purpose of Request
-                    </label>
-
-                    <div class="textarea-wrapper">
-
-                        <i class="fa-regular fa-file-lines"></i>
-
-                        <textarea
-                            id="purpose"
-                            rows="3"
-                            placeholder="Enter purpose of requesting Form 137..."
-                        ></textarea>
-
+                    <label>Request Type</label>
+                    <div class="request-options">
+                        <label class="check-option">
+                            <input type="checkbox" id="firstRequest">
+                            <span class="check-box"><i class="fa-solid fa-check"></i></span>
+                            <span>1st Request</span>
+                        </label>
+                        <label class="check-option">
+                            <input type="checkbox" id="secondRequest">
+                            <span class="check-box"><i class="fa-solid fa-check"></i></span>
+                            <span>2nd Request</span>
+                        </label>
                     </div>
-
                 </div>
 
+                <div class="form-group">
+                    <label>Processing</label>
+                    <div class="request-options">
+                        <label class="check-option">
+                            <input type="checkbox" id="urgentRequest">
+                            <span class="check-box"><i class="fa-solid fa-check"></i></span>
+                            <span>Urgent</span>
+                        </label>
+                        <label class="check-option">
+                            <input type="checkbox" id="bearerRequest">
+                            <span class="check-box"><i class="fa-solid fa-check"></i></span>
+                            <span>Entrust to Bearer</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="requestDate">Date</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <input type="date" id="requestDate">
+                    </div>
+                </div>
             </section>
 
+            <!-- PURPOSE -->
+            <section class="form-section">
+                <div class="section-heading">
+                    <span class="section-icon"><i class="fa-solid fa-pen-to-square"></i></span>
+                    <div>
+                        <h3>Additional Information</h3>
+                        <p>Optional details</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="purpose">Purpose of Request</label>
+                    <div class="textarea-wrapper">
+                        <i class="fa-regular fa-file-lines"></i>
+                        <textarea id="purpose" rows="3" placeholder="Enter purpose of requesting Form 137..."></textarea>
+                    </div>
+                </div>
+            </section>
 
         </div>
-
-
-        <!-- =================================================
-             ACTION BUTTONS
-        ================================================== -->
 
         <div class="sidebar-actions">
-
-
-            <button
-                type="button"
-                class="action-btn generate-btn"
-                id="generateBtn"
-            >
-
+            <button type="button" class="action-btn generate-btn" id="generateBtn">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
-
                 Generate Letter
-
             </button>
-
-
             <div class="action-row">
-
-
-                <button
-                    type="button"
-                    class="action-btn print-btn"
-                    id="printBtn"
-                >
-
+                <button type="button" class="action-btn print-btn" id="printBtn">
                     <i class="fa-solid fa-print"></i>
-
                     Print
-
                 </button>
-
-
-                <button
-                    type="button"
-                    class="action-btn clear-btn"
-                    id="clearBtn"
-                >
-
+                <button type="button" class="action-btn clear-btn" id="clearBtn">
                     <i class="fa-solid fa-rotate-left"></i>
-
                     Clear
-
                 </button>
-
-
             </div>
-
-
         </div>
-
 
     </aside>
 
-
-
-    <!-- =====================================================
-         RIGHT PREVIEW AREA
-    ====================================================== -->
-
+    <!-- ============================================= PREVIEW ============================================= -->
     <main class="preview-area">
 
-
-        <!-- PREVIEW HEADER -->
-
         <div class="preview-header">
-
             <div>
-
-                <span class="preview-label">
-                    DOCUMENT PREVIEW
-                </span>
-
-                <h2>
-                    Form 137 Request Letter
-                </h2>
-
+                <span class="preview-label">DOCUMENT PREVIEW</span>
+                <h2>Form 137 Request Letter</h2>
             </div>
-
-
             <div class="paper-info">
-
                 <i class="fa-regular fa-file-lines"></i>
-
-                SHORT BOND • 8.5 × 11
-
+                SHORT BOND &bull; 8.5 &times; 11
             </div>
-
         </div>
 
-
-
-        <!-- =================================================
-             LETTER PAPER
-        ================================================== -->
-
         <div class="paper-container">
+            <article class="letter-paper" id="letterPaper">
 
-
-            <article
-                class="letter-paper"
-                id="letterPaper"
-            >
-
-
-                <!-- =================================================
-                     HEADER IMAGE
-                ================================================== -->
-
-                <header class="official-header">
-
-                    <img
-                        src="Capture.JPG"
-                        alt="Andres Soriano Colleges of Bislig Official Header"
-                        class="header-image"
-                    >
-
+                <header class="official-header" id="officialHeader">
+                    <div class="header-fallback" id="headerFallback">
+                        <div class="header-fallback-title">ANDRES SORIANO COLLEGES OF BISLIG, INC.</div>
+                        <div class="header-fallback-sub">Mangagoy, Bislig City</div>
+                    </div>
+                    <img src="Capture.JPG" alt="Andres Soriano Colleges of Bislig Official Header" class="header-image" id="headerImage">
                 </header>
 
-
-
-                <!-- =================================================
-                     LETTER DATE
-                ================================================== -->
-
-                <div class="letter-date">
-
-                    <span id="previewDate">
-                        July 31, 2026
-                    </span>
-
-                </div>
-
-
-
-                <!-- =================================================
-                     RECIPIENT
-                ================================================== -->
+                <div class="letter-date"><span id="previewDate">July 31, 2026</span></div>
 
                 <div class="recipient-block">
-
-                    <div class="recipient-title">
-                        The Principal
-                    </div>
-
-
-                    <div
-                        class="recipient-school"
-                        id="previewSchool"
-                    >
-                        ANDRES SORIANO COLLEGES OF BISLIG, INC.
-                    </div>
-
-
-                    <div
-                        class="recipient-address"
-                        id="previewSchoolAddress"
-                    >
-                        Mangagoy, Bislig City
-                    </div>
-
+                    <div class="recipient-title">The Principal</div>
+                    <div class="recipient-school" id="previewSchool">ANDRES SORIANO COLLEGES OF BISLIG, INC.</div>
+                    <div class="recipient-address" id="previewSchoolAddress">Mangagoy, Bislig City</div>
                 </div>
 
-
-
-                <!-- =================================================
-                     SALUTATION
-                ================================================== -->
-
-                <div class="salutation">
-                    Sir/Madam:
-                </div>
-
-
-
-                <!-- =================================================
-                     LETTER BODY
-                ================================================== -->
+                <div class="salutation">Sir/Madam:</div>
 
                 <div class="letter-body">
 
-
                     <p class="letter-intro">
                         May I have the honor to request for the original copy of the
-                        <strong>Form 137-A</strong> of the following student who is temporarily
-                        enrolled in this school upon presentation of his/her Form-138 duly
-                        signed by the principal.
+                        <strong>Form 137-A</strong> of the following student<span id="pluralTag">s</span> who
+                        <span id="isAreTag">are</span> temporarily enrolled in this school upon presentation of
+                        his/her Form-138 duly signed by the principal.
                     </p>
-
-
-
-                    <!-- =================================================
-                         STUDENT TABLE
-                    ================================================== -->
 
                     <table class="student-details-table">
-
                         <thead>
-
                             <tr>
-
-                                <th>
-                                    NAME
-                                </th>
-
-                                <th>
-                                    ADMITTED TO
-                                </th>
-
-                                <th>
-                                    LAST SCHOOL YEAR<br>
-                                    ATTENDED
-                                </th>
-
-                                <th>
-                                    YEAR &amp; SECTION
-                                </th>
-
+                                <th>NAME</th>
+                                <th>ADMITTED TO</th>
+                                <th>LAST SCHOOL YEAR<br>ATTENDED</th>
+                                <th>YEAR &amp; SECTION</th>
                             </tr>
-
                         </thead>
-
-
-                        <tbody>
-
+                        <tbody id="studentTableBody">
                             <tr>
-
-                                <td id="previewStudentName">
-                                    MAGANSI, JAYBERT M.
-                                </td>
-
-                                <td id="previewCourse">
-                                    BSIT
-                                </td>
-
-                                <td id="previewSchoolYear">
-                                    2023-2024
-                                </td>
-
-                                <td id="previewYearSection">
-                                    XII-HUMSS B
-                                </td>
-
+                                <td>STUDENT NAME</td>
+                                <td>COURSE</td>
+                                <td>SCHOOL YEAR</td>
+                                <td>YEAR &amp; SECTION</td>
                             </tr>
-
-
                             <tr>
-
-                                <td
-                                    colspan="4"
-                                    class="nothing-follows"
-                                >
-                                    *Nothing Follows*
-                                </td>
-
+                                <td colspan="4" class="nothing-follows">*Nothing Follows*</td>
                             </tr>
-
                         </tbody>
-
                     </table>
 
-
-
-                    <!-- =================================================
-                         REQUEST STATEMENT
-                    ================================================== -->
-
                     <p class="request-paragraph">
-
-                        We shall highly appreciate your kind
-                        consideration of this request and the
-                        prompt release of the above-mentioned
-                        academic record.
-
+                        We shall highly appreciate your kind consideration of this request
+                        and the prompt release of the above-mentioned academic record<span id="pluralTag2">s</span>.
                     </p>
 
-
-
-                    <!-- =================================================
-                         REQUEST OPTIONS
-                    ================================================== -->
-
                     <div class="letter-options">
-
-
                         <div class="letter-option">
-
-                            <span
-                                class="print-check"
-                                id="previewFirstRequest"
-                            ></span>
-
-                            <span>
-                                1st request
-                            </span>
-
+                            <span class="print-check" id="previewFirstRequest"></span>
+                            <span>1st request</span>
                         </div>
-
-
                         <div class="letter-option">
-
-                            <span
-                                class="print-check"
-                                id="previewSecondRequest"
-                            ></span>
-
-                            <span>
-                                2nd request
-                            </span>
-
+                            <span class="print-check" id="previewSecondRequest"></span>
+                            <span>2nd request</span>
                         </div>
-
-
                         <div class="letter-option">
-
-                            <span
-                                class="print-check"
-                                id="previewUrgent"
-                            ></span>
-
-                            <span>
-                                Urgent
-                            </span>
-
+                            <span class="print-check" id="previewUrgent"></span>
+                            <span>Urgent</span>
                         </div>
-
-
                         <div class="letter-option">
-
-                            <span
-                                class="print-check"
-                                id="previewBearer"
-                            ></span>
-
-                            <span>
-                                Please entrust to the bearer
-                            </span>
-
+                            <span class="print-check" id="previewBearer"></span>
+                            <span>Please entrust to the bearer</span>
                         </div>
-
-
                     </div>
 
-
-
-                    <!-- =================================================
-                         PURPOSE
-                    ================================================== -->
-
-                    <div
-                        class="purpose-preview"
-                        id="previewPurpose"
-                    >
-
-                    </div>
-
+                    <div class="purpose-preview" id="previewPurpose"></div>
 
                 </div>
-
-
-
-                <!-- =================================================
-                     SIGNATURE
-                ================================================== -->
 
                 <div class="signature-block">
-
-
-                    <div class="very-truly">
-                        Very truly yours,
-                    </div>
-
-
-                    <div class="signature-space">
-                    </div>
-
-
-                    <div class="signature-name">
-                        REBECCA P. CAPONONG, MAEd
-                    </div>
-
-
-                    <div class="signature-title">
-                        School Registrar
-                    </div>
-
-
+                    <div class="very-truly">Very truly yours,</div>
+                    <div class="signature-space"></div>
+                    <div class="signature-name">REBECCA P. CAPONONG, MAEd</div>
+                    <div class="signature-title">School Registrar</div>
                 </div>
 
-
-
-                <!-- =================================================
-                     SCHOOL SEAL WARNING
-                ================================================== -->
-
-                <div class="seal-warning">
-
-                    <strong>
-                        NOT VALID WITHOUT
-                    </strong>
-                    <br>
-                    <strong>
-                        SCHOOL SEAL
-                    </strong>
-
-                </div>
-
-
-
-                <!-- =================================================
-                     PAPER FOOTER
-                ================================================== -->
-
-
-
+                <div class="seal-warning"><strong>NOT VALID WITHOUT</strong><br><strong>SCHOOL SEAL</strong></div>
 
             </article>
-
         </div>
-
 
     </main>
 
 </div>
 
-
-
-<!-- =========================================================
-     ADD SCHOOL MODAL
-========================================================= -->
-
-<div
-    class="modal-overlay"
-    id="schoolModal"
->
-
-
+<!-- ADD SCHOOL MODAL -->
+<div class="modal-overlay" id="schoolModal">
     <div class="modal-card">
-
-
-        <button
-            type="button"
-            class="modal-close"
-            data-close="schoolModal"
-        >
-
-            <i class="fa-solid fa-xmark"></i>
-
-        </button>
-
-
-        <div class="modal-icon">
-
-            <i class="fa-solid fa-school"></i>
-
-        </div>
-
-
-        <h2>
-            Add School
-        </h2>
-
-
-        <p>
-            Add a school to your dropdown list.
-        </p>
-
-
+        <button type="button" class="modal-close" data-close="schoolModal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-icon"><i class="fa-solid fa-school"></i></div>
+        <h2>Add School</h2>
+        <p>Add a school to your dropdown list.</p>
         <div class="modal-form-group">
-
-            <label for="newSchoolName">
-                School Name
-            </label>
-
-            <input
-                type="text"
-                id="newSchoolName"
-                placeholder="Enter complete school name"
-                autocomplete="off"
-            >
-
+            <label for="newSchoolName">School Name</label>
+            <input type="text" id="newSchoolName" placeholder="Enter complete school name" autocomplete="off">
         </div>
-
-
         <div class="modal-form-group">
-
-            <label for="newSchoolAddress">
-                School Address
-            </label>
-
-            <input
-                type="text"
-                id="newSchoolAddress"
-                placeholder="Enter complete school address"
-                autocomplete="off"
-            >
-
+            <label for="newSchoolAddress">School Address</label>
+            <input type="text" id="newSchoolAddress" placeholder="Enter complete school address" autocomplete="off">
         </div>
-
-
-        <button
-            type="button"
-            class="modal-save"
-            id="saveSchoolBtn"
-        >
-
-            <i class="fa-solid fa-plus"></i>
-
-            Add School
-
-        </button>
-
+        <button type="button" class="modal-save" id="saveSchoolBtn"><i class="fa-solid fa-plus"></i> Add School</button>
     </div>
-
 </div>
 
-
-
-<!-- =========================================================
-     ADD COURSE MODAL
-========================================================= -->
-
-<div
-    class="modal-overlay"
-    id="courseModal"
->
-
-
+<!-- ADD COURSE MODAL -->
+<div class="modal-overlay" id="courseModal">
     <div class="modal-card">
-
-
-        <button
-            type="button"
-            class="modal-close"
-            data-close="courseModal"
-        >
-
-            <i class="fa-solid fa-xmark"></i>
-
-        </button>
-
-
-        <div class="modal-icon">
-
-            <i class="fa-solid fa-graduation-cap"></i>
-
-        </div>
-
-
-        <h2>
-            Add Course
-        </h2>
-
-
-        <p>
-            Add a course or program to your dropdown list.
-        </p>
-
-
+        <button type="button" class="modal-close" data-close="courseModal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h2>Add Course</h2>
+        <p>Add a course or program to your dropdown list.</p>
         <div class="modal-form-group">
-
-            <label for="newCourseName">
-                Course / Program
-            </label>
-
-            <input
-                type="text"
-                id="newCourseName"
-                placeholder="e.g. BS Psychology"
-                autocomplete="off"
-            >
-
+            <label for="newCourseName">Course / Program</label>
+            <input type="text" id="newCourseName" placeholder="e.g. BS Psychology" autocomplete="off">
         </div>
-
-
-        <button
-            type="button"
-            class="modal-save"
-            id="saveCourseBtn"
-        >
-
-            <i class="fa-solid fa-plus"></i>
-
-            Add Course
-
-        </button>
-
+        <button type="button" class="modal-save" id="saveCourseBtn"><i class="fa-solid fa-plus"></i> Add Course</button>
     </div>
-
 </div>
 
-
-
-<!-- =========================================================
-     SUCCESS TOAST
-========================================================= -->
-
-<div
-    class="toast"
-    id="toast"
->
-
+<!-- TOAST -->
+<div class="toast" id="toast">
     <i class="fa-solid fa-circle-check"></i>
-
-    <span id="toastMessage">
-        Successfully saved.
-    </span>
-
+    <span id="toastMessage">Successfully saved.</span>
 </div>
-
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
 
 <script src="script.js"></script>
-
-
 </body>
-
 </html>
