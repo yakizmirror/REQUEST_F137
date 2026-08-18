@@ -14,7 +14,41 @@ const DEFAULT_SCHOOLS = [
     {
         name: "ANDRES SORIANO COLLEGES OF BISLIG, INC.",
         address: "Mangagoy, Bislig City"
+    },
+        {
+        name: "TABON M. ESTRELLA NATIONAL HIGH SCHOOL",
+        address: "Tabon, Bislig City"
+    },  {
+        name: "STAND ALONE SENIOR HIGH SCHOOL",
+        address: "Comawas, Bislig City"
+    },  {
+        name: "SOUTHERN TECHNOLOGICAL INSTITUTE OF THE PHILIPPINES, INC.",
+        address: "Andres Soriano Avenue, Mangagoy, Bislig City"
+    },  {
+        name: "AGUSAN NATIONAL HIGH SCHOOL",
+        address: "Butuan City, Surigao del Sur"
+    },  {
+        name: "BERNARDO D. CARPIO NATIONAL HIGH SCHOOL",
+        address: "Pioneer Village, Buhangin, Davao City"
+    },  {
+        name: "BISLIG CITY NATIONAL HIGH SCHOOL",
+        address: "Purok 10 Villa Josefa Poblacion, Bislig City"
+    },  {
+        name: "HINATUAN NATIONAL COMPREHENSIVE HIGH SCHOOL",
+        address: "Sto. Niño, Hinatuan, Surigao del Sur"
+    },  {
+        name: "LAWIGAN NATIONAL HIGH SCHOOL",
+        address: "Lawigan, Bislig City"
+    },  {
+        name: "LINGIG NATIONAL HIGH SCHOOL",
+        address: "Lingig 1 District"
+    },  {
+        name: "MAHARLIKA NATIONAL HIGH SCHOOL",
+        address: "Maharlika, Bislig City"
     }
+    
+
+
 ];
 
 
